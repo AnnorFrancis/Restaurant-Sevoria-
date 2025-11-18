@@ -1,0 +1,127 @@
+:root {
+  --orange1: #d57842;
+  --orange2: #e6a24b;
+  --bg: #fdf9f5;
+  --bg-gradient: linear-gradient(to bottom right, #fdf9f5, #ffece0);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: #333;
+}
+
+/* ================================
+       NAVIGATION BAR (Exact Screenshot)
+       ================================ */
+nav {
+  width: 90%;
+  margin: 25px auto;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 14px 28px;
+  border-radius: 50px;
+  box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo + Text */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(213, 120, 66, 0.2),
+    rgba(230, 162, 75, 0.2)
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid rgba(213, 120, 66, 0.18);
+}
+
+.logo i {
+  font-size: 20px;
+  color: var(--orange1);
+}
+
+.brand {
+  font-size: 20px;
+  font-weight: 600;
+  background: linear-gradient(to right, var(--orange1), var(--orange2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Center menu */
+.nav-center {
+  display: flex;
+  gap: 40px;
+}
+
+.nav-center a {
+  text-decoration: none;
+  color: #222;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* Right button */
+.reserve-btn {
+  background: linear-gradient(to right, var(--orange1), var(--orange2));
+  color: white;
+  padding: 12px 26px;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  box-shadow: 0px 6px 25px rgba(213, 120, 66, 0.3);
+  border: none;
+  cursor: pointer;
+}
+
+.reserve-btn i {
+  font-size: 16px;
+}
+
+/* ================================
+       HERO SECTION (Exact Screenshot)
+       ================================ */
+.hero {
+  width: 100%;
+  text-align: center;
+  margin-top: 120px;
+}
+
+.hero h1 {
+  font-size: 90px;
+  font-weight: 800;
+  background: linear-gradient(to right, var(--orange1), var(--orange2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  margin-top: 18px;
+  font-size: 20px;
+  color: #7a6f66;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+}
