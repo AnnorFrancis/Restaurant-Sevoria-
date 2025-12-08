@@ -125,6 +125,197 @@ nav {
   margin-right: auto;
   line-height: 1.5;
 }
+.menu-wheel-section {
+  text-align: center;
+  padding: 70px 0;
+  background: #f7f7f7;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.wheel-container {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  margin: auto;
+}
+
+.center-image {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 6px solid white;
+  box-shadow: 0 0 20px rgba(255, 110, 60, 0.4);
+  z-index: 2;
+}
+
+.wheel {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: relative;
+  transition: transform 1.3s ease-in-out;
+}
+
+.item {
+  position: absolute;
+  width: 95px;
+  height: 95px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  border: 4px solid white;
+  box-shadow: 0 0 15px rgba(255, 80, 40, 0.6);
+  left: 50%;
+  top: 50%;
+  transform-origin: -140px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Hover animation */
+.item:hover {
+  transform: scale(1.2) translate(0);
+  box-shadow: 0 0 25px rgba(255, 80, 40, 0.9);
+}
+
+/* Position items around circle */
+.item:nth-child(1) {
+  transform: rotate(0deg) translate(150px) rotate(0deg);
+}
+.item:nth-child(2) {
+  transform: rotate(60deg) translate(150px) rotate(-60deg);
+}
+.item:nth-child(3) {
+  transform: rotate(120deg) translate(150px) rotate(-120deg);
+}
+.item:nth-child(4) {
+  transform: rotate(180deg) translate(150px) rotate(-180deg);
+}
+.item:nth-child(5) {
+  transform: rotate(240deg) translate(150px) rotate(-240deg);
+}
+.item:nth-child(6) {
+  transform: rotate(300deg) translate(150px) rotate(-300deg);
+}
+
+/* Button */
+.rotate-btn {
+  margin-top: 25px;
+  padding: 16px;
+  background: #ff6b3d;
+  color: white;
+  font-size: 22px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.rotate-btn:hover {
+  background: #e65b30;
+}
+
+/* Modal */
+.menu-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  width: 300px;
+  border-radius: 12px;
+  text-align: center;
+  animation: fadeIn 0.4s ease;
+}
+
+.close-modal {
+  font-size: 24px;
+  float: right;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .wheel-container {
+    width: 260px;
+    height: 260px;
+  }
+
+  .center-image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .item {
+    width: 70px;
+    height: 70px;
+    transform-origin: -110px;
+  }
+
+  .item:nth-child(1) {
+    transform: rotate(0deg) translate(115px) rotate(0deg);
+  }
+  .item:nth-child(2) {
+    transform: rotate(60deg) translate(115px) rotate(-60deg);
+  }
+  .item:nth-child(3) {
+    transform: rotate(120deg) translate(115px) rotate(-120deg);
+  }
+  .item:nth-child(4) {
+    transform: rotate(180deg) translate(115px) rotate(-180deg);
+  }
+  .item:nth-child(5) {
+    transform: rotate(240deg) translate(115px) rotate(-240deg);
+  }
+  .item:nth-child(6) {
+    transform: rotate(300deg) translate(115px) rotate(-300deg);
+  }
+}
+
+/* visible items */
+.item.active {
+  opacity: 1;
+  transform: scale(1.2);
+  z-index: 5;
+  filter: brightness(1);
+}
+
+/* hidden items */
+.item.hidden {
+  opacity: 0.2;
+  transform: scale(0.7);
+  z-index: 1;
+  filter: blur(1px) brightness(0.7);
+}
 
 /* footer */
 
@@ -133,7 +324,7 @@ nav {
    ================================ */
 footer {
   position: relative;
-  padding: 72px 6%;
+  padding: 42px 6% 48px;
   background: linear-gradient(
     160deg,
     rgba(21, 17, 16, 0.96),
@@ -143,6 +334,7 @@ footer {
   overflow: hidden;
   border-top-left-radius: 28px;
   border-top-right-radius: 28px;
+  margin-top: 100px;
 }
 
 .footer-content {
