@@ -41,11 +41,40 @@
       </button>
     </nav>
 
-    <!-- HERO SECTION -->
+    <!-- HERO / SLIDESHOW SECTION -->
     <section class="hero">
-      <h1>Welcome to Savoria</h1>
-      <h2>Delight in Every Bite</h2>
-      <p>Experience culinary excellence with our revolutionary navigation</p>
+      <div class="slideshow" id="heroSlideshow">
+        <div class="slide" style="background-image: url('images/hero1.jpg')">
+          <div class="slide-inner">
+            <h1>Welcome to Savoria</h1>
+            <p>
+              Delight in every bite — seasonal ingredients, timeless recipes.
+            </p>
+            <a class="cta" href="#menu">Explore Menu</a>
+          </div>
+        </div>
+
+        <div class="slide" style="background-image: url('images/hero2.jpg')">
+          <div class="slide-inner">
+            <h1>Farm to Table</h1>
+            <p>Fresh flavors from local farms and sustainable partners.</p>
+            <a class="cta" href="#reservations">Reserve a table</a>
+          </div>
+        </div>
+
+        <div class="slide" style="background-image: url('images/hero3.jpg')">
+          <div class="slide-inner">
+            <h1>Crafted Cocktails</h1>
+            <p>Signature drinks made to match your meal.</p>
+            <a class="cta" href="#contact">Order Drinks</a>
+          </div>
+        </div>
+
+        <div class="slideshow-nav">
+          <button class="prev">‹</button>
+          <button class="next">›</button>
+        </div>
+      </div>
     </section>
 
     <!-- TOP MENU SECTION -->
@@ -112,6 +141,88 @@
       </div>
     </section>
 
+    <!-- TOP MENU GRID (side-by-side) -->
+    <section id="menu" class="top-menu-grid-section">
+      <h2 class="section-title">Top Picks</h2>
+      <div class="top-menu-grid">
+        <article
+          class="menu-card"
+          data-name="Pizza"
+          data-price="$14"
+          data-desc="Wood-fired Italian pizza with fresh basil."
+          style="background-image: url('images/pizza.webp')"
+        >
+          <div class="card-overlay">
+            <h3>Pizza</h3>
+            <p>$14</p>
+          </div>
+        </article>
+
+        <article
+          class="menu-card"
+          data-name="Pasta"
+          data-price="$12"
+          data-desc="Creamy Alfredo pasta prepared with parmesan."
+          style="background-image: url('images/pasta.jpg')"
+        >
+          <div class="card-overlay">
+            <h3>Pasta</h3>
+            <p>$12</p>
+          </div>
+        </article>
+
+        <article
+          class="menu-card"
+          data-name="Burgers"
+          data-price="$11"
+          data-desc="Smash burger with melted cheese and crispy onions."
+          style="background-image: url('images/burger.jpg')"
+        >
+          <div class="card-overlay">
+            <h3>Burgers</h3>
+            <p>$11</p>
+          </div>
+        </article>
+
+        <article
+          class="menu-card"
+          data-name="Desserts"
+          data-price="$9"
+          data-desc="Chocolate lava cake topped with vanilla ice cream."
+          style="background-image: url('images/dessert.jpg')"
+        >
+          <div class="card-overlay">
+            <h3>Desserts</h3>
+            <p>$9</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features">
+      <h2 class="section-title">Why Choose Savoria</h2>
+      <div class="features-grid">
+        <div class="feature">
+          <i class="fas fa-seedling"></i>
+          <h3>Fresh Ingredients</h3>
+          <p>We source seasonal produce from trusted local farms.</p>
+        </div>
+
+        <div class="feature">
+          <i class="fas fa-user-chef"></i>
+          <h3>Expert Chefs</h3>
+          <p>Our chefs craft each dish with precision and flair.</p>
+        </div>
+
+        <div class="feature">
+          <i class="fas fa-wine-glass-alt"></i>
+          <h3>Handmade Cocktails</h3>
+          <p>Artisan cocktails prepared by our in-house mixologists.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- Modal -->
     <div class="menu-modal" id="menuModal">
       <div class="modal-content">
@@ -156,81 +267,6 @@
       </div>
     </footer>
 
-    <script src="script.js">
-      //             let rotation = 0;
-      //       let autoRotateInterval;
-
-      //       // Rotate button
-      //       document.getElementById("rotateBtn").addEventListener("click", () => {
-      //         rotateWheel();
-      //         playClickSound();
-      //       });
-
-      //       // Auto rotate every 4 seconds
-      //       function startAutoRotate() {
-      //         autoRotateInterval = setInterval(() => {
-      //           rotateWheel();
-      //         }, 4000);
-      //       }
-
-      //       function rotateWheel() {
-      //         rotation += 60;
-      //         document.getElementById("menuWheel").style.transform = `rotate(${rotation}deg)`;
-      //         updateVisibleItems();
-      //       }
-
-      //       function playClickSound() {
-      //         document.getElementById("clickSound").play();
-      //       }
-
-      //       // Modal functionality
-      //       const items = document.querySelectorAll(".item");
-      //       const modal = document.getElementById("menuModal");
-      //       const modalName = document.getElementById("modalName");
-      //       const modalDesc = document.getElementById("modalDesc");
-      //       const modalPrice = document.getElementById("modalPrice");
-
-      //       items.forEach(item => {
-      //         item.addEventListener("click", () => {
-      //           modalName.textContent = item.dataset.name;
-      //           modalDesc.textContent = item.dataset.desc;
-      //           modalPrice.textContent = item.dataset.price;
-
-      //           modal.style.display = "flex";
-      //           playClickSound();
-      //         });
-      //       });
-
-      //       // Close modal
-      //       document.querySelector(".close-modal").addEventListener("click", () => {
-      //         modal.style.display = "none";
-      //       });
-
-      //       // Close when clicking outside
-      //       window.addEventListener("click", (e) => {
-      //         if (e.target === modal) modal.style.display = "none";
-      //       });
-
-      //       // Start auto rotation
-      //       startAutoRotate();
-
-      //       function updateVisibleItems() {
-      //   const items = document.querySelectorAll(".item");
-
-      //   items.forEach((item, index) => {
-      //     const angle = (rotation / 60 + index) % items.length;
-
-      //     // Only 3 front items should be fully visible
-      //     if (angle === 0 || angle === 1 || angle === 5) {
-      //       item.classList.add("active");
-      //       item.classList.remove("hidden");
-      //     } else {
-      //       item.classList.add("hidden");
-      //       item.classList.remove("active");
-      //     }
-      //   });
-      // }
-      // updateVisibleItems();
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>

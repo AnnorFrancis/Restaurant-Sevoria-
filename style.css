@@ -6,7 +6,7 @@
 }
 
 * {
-  box-sizing: border-box;
+  box-sizing: content-box;
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
@@ -105,7 +105,13 @@ nav {
 .hero {
   width: 100%;
   text-align: center;
-  margin-top: 120px;
+  /* margin-top: 50px; */
+  background-image: url("https://wallpaperaccess.com/full/3014622.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 150px 20px;
+  box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
 }
 
 .hero h1 {
@@ -124,6 +130,185 @@ nav {
   margin-left: auto;
   margin-right: auto;
   line-height: 1.5;
+}
+
+/* ============ Slideshow / Hero Enhancements ============ */
+.slideshow {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px auto 60px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+}
+.slide {
+  min-height: 420px;
+  background-size: cover;
+  background-position: center;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.slide.active {
+  display: flex;
+}
+.slide-inner {
+  text-align: left;
+  padding: 40px;
+  max-width: 720px;
+  color: #222;
+  background: rgba(255, 255, 255, 0.82);
+  border-radius: 12px;
+}
+.slide-inner h1 {
+  font-size: 42px;
+  margin-bottom: 8px;
+}
+.slide-inner p {
+  margin-bottom: 14px;
+  color: #5b5149;
+}
+.cta {
+  display: inline-block;
+  padding: 10px 18px;
+  background: linear-gradient(to right, var(--orange1), var(--orange2));
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.slideshow-nav {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  display: flex;
+  gap: 8px;
+}
+.slideshow-nav button {
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 20px;
+}
+.slideshow-nav button:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* ============ Top Menu Grid ============ */
+.top-menu-grid-section {
+  padding: 60px 6%;
+  background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.6));
+}
+.top-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.menu-card {
+  position: relative;
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 300ms ease, box-shadow 300ms ease;
+}
+.menu-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+}
+.card-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 14px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.38));
+  color: #fff;
+}
+.card-overlay h3 {
+  margin: 0;
+  font-size: 18px;
+}
+.card-overlay p {
+  margin: 4px 0 0;
+  font-weight: 600;
+}
+
+/* ============ Features ============ */
+.features {
+  padding: 60px 6%;
+}
+.features-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.feature {
+  background: white;
+  padding: 22px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  transition: transform 320ms ease, box-shadow 320ms ease;
+}
+.feature i {
+  font-size: 32px;
+  color: var(--orange1);
+  margin-bottom: 12px;
+}
+.feature h3 {
+  margin-bottom: 10px;
+}
+.feature:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* simple fade-in animation for elements */
+.reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 520ms ease, transform 520ms ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* responsive */
+@media (max-width: 1000px) {
+  .top-menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .features-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .slide-inner {
+    padding: 22px;
+  }
+  .slide-inner h1 {
+    font-size: 28px;
+  }
+  .top-menu-grid {
+    grid-template-columns: 1fr;
+  }
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
 }
 .menu-wheel-section {
   text-align: center;
